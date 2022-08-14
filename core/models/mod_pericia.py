@@ -1,6 +1,4 @@
-from tabnanny import verbose
 from django.db import models
-
 
 class Pericia(models.Model):
     id_pericia = models.AutoField(primary_key=True)
