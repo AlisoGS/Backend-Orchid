@@ -4,7 +4,6 @@ from django.db import models
 class Item(models.Model):
     class Meta:
         abstract = True
-        verbose_name_plural = "Itens"
 
     id_item = models.AutoField(primary_key=True)
     nome_item = models.CharField(max_length=255)
