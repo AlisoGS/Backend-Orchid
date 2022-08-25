@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import mod_atributo
+from core.models import atributo
 
 class AtributoSerializer(ModelSerializer):
     class Meta:
-        model = mod_atributo.Atributo
+        model = atributo.Atributo
         fields = '__all__'

@@ -1,5 +1,5 @@
 from django.db import models
-from core.models import mod_ficha, mod_pericia
+from core.models import ficha, pericia
 
 
 class FicPer(models.Model):
@@ -15,9 +15,9 @@ class FicPer(models.Model):
     ]
 
     id_fic_per = models.ForeignKey(
-        mod_ficha.Ficha, on_delete=models.PROTECT, related_name="FicPer"
+        ficha.Ficha, on_delete=models.PROTECT, related_name="FicPer"
     )
     id_per_fic = models.ForeignKey(
-        mod_pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic"
+        pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic"
     )
     grau_pericia = models.IntegerField(choices=GRAUS, null=False, blank=False)

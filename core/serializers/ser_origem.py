@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import mod_origem
+from core.models import origem
 
 class OrigemSerializer(ModelSerializer):
     class Meta:
-        model = mod_origem.Origem
+        model = origem.Origem
         fields = '__all__'

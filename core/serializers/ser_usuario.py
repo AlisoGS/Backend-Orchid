@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import mod_usuario
+from core.models import usuario
 
 class UsuarioSerializer(ModelSerializer):
     class Meta:
-        model = mod_usuario.Usuario
+        model = usuario.Usuario
         fields = '__all__'

@@ -1,14 +1,14 @@
 from django.contrib import admin
 
-from core.models import mod_usuario, mod_origem, mod_pericia, mod_item, mod_atributo, mod_ficha, mod_atr_fic, mod_fic_per
+from core.models import usuario, origem, pericia, item, atributo, ficha, atr_fic, fic_per
 
-admin.site.register(mod_usuario.Usuario)
-admin.site.register(mod_origem.Origem)
-admin.site.register(mod_pericia.Pericia)
-admin.site.register(mod_item.Arma)
-admin.site.register(mod_item.Utilitario)
-admin.site.register(mod_item.Vestimenta)
-admin.site.register(mod_atributo.Atributo)
-admin.site.register(mod_ficha.Ficha)
-admin.site.register(mod_atr_fic.AtrFic)
-admin.site.register(mod_fic_per.FicPer)
+admin.site.register(usuario.Usuario)
+admin.site.register(origem.Origem)
+admin.site.register(pericia.Pericia)
+admin.site.register(item.Arma)
+admin.site.register(item.Utilitario)
+admin.site.register(item.Vestimenta)
+admin.site.register(atributo.Atributo)
+admin.site.register(ficha.Ficha)
+admin.site.register(atr_fic.AtrFic)
+admin.site.register(fic_per.FicPer)

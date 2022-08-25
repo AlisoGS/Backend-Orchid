@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import mod_ficha
+from core.models import ficha
 
 class FichaSerializer(ModelSerializer):
     class Meta:
-        model = mod_ficha.Ficha
+        model = ficha.Ficha
         fields = '__all__'
