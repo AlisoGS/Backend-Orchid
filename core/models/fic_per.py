@@ -15,9 +15,7 @@ class FicPer(models.Model):
     ]
 
     id_fic_per = models.ForeignKey(
-        ficha.Ficha, on_delete=models.PROTECT, related_name="FicPer"
-    )
+        ficha.Ficha, on_delete=models.PROTECT, related_name="FicPer")
     id_per_fic = models.ForeignKey(
-        pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic"
-    )
+        pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic")
     grau_pericia = models.IntegerField(choices=GRAUS, null=False, blank=False, default=1)
