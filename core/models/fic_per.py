@@ -3,15 +3,15 @@ from core.models import ficha, pericia
 
 
 class FicPer(models.Model):
-    destreinado = 1
-    treinado = 2
-    veterano = 3
-    expert = 4
+    d = 1
+    t = 2
+    v = 3
+    e = 4
     GRAUS = [
-        (destreinado, "D"),
-        (treinado, "T"),
-        (veterano, "V"),
-        (expert, "E"),
+        (d, "Destreinado"),
+        (t, "Treinado"),
+        (v, "Veterano"),
+        (e, "Expert"),
     ]
 
     id_fic_per = models.ForeignKey(
@@ -20,4 +20,4 @@ class FicPer(models.Model):
     id_per_fic = models.ForeignKey(
         pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic"
     )
-    grau_pericia = models.IntegerField(choices=GRAUS, null=False, blank=False)
+    grau_pericia = models.IntegerField(choices=GRAUS, null=False, blank=False, default=1)
