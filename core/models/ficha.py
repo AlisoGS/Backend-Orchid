@@ -1,5 +1,5 @@
 from django.db import models
-from core.models import usuario, origem, pericia
+from core.models import usuario, origem, pericia,atributo
 
 class Ficha(models.Model):
     id_ficha = models.AutoField(primary_key=True)
@@ -11,6 +11,7 @@ class Ficha(models.Model):
     )
     nome_ficha = models.CharField(max_length=255, blank=False)
 
+    atributos = models.ManyToManyField(atributo.Atributo, related_name="fichas")
     pericias = models.ManyToManyField(pericia.Pericia, related_name="fichas", through='FicPer')
 
     nex = models.PositiveIntegerField(default=0)
