@@ -18,3 +18,31 @@ class Ficha(models.Model):
     vida_atu = models.IntegerField(default=0)
     sani_max = models.IntegerField(default=0)
     sani_atu = models.IntegerField(default=0)
+
+
+    def __str__(self):
+        return f"{self.nome_ficha}"
+
+class FicPer(models.Model):
+    d = 1
+    t = 2
+    v = 3
+    e = 4
+    GRAUS = [
+        (d, "Destreinado"),
+        (t, "Treinado"),
+        (v, "Veterano"),
+        (e, "Expert"),
+    ]
+
+    ficha = models.ForeignKey(
+        Ficha, on_delete=models.PROTECT, related_name="FicPer")
+    pericia = models.ForeignKey(
+        pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic")
+    grau_pericia = models.IntegerField(choices=GRAUS, null=False, blank=False, default=1)
+
+    class Meta:
+        unique_together = [['ficha', 'pericia']]
+
+    def __str__(self):
+        return f"{self.ficha} - {self.pericia}"
