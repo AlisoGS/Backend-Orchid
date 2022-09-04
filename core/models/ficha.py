@@ -12,7 +12,7 @@ class Ficha(models.Model):
     )
     nome_ficha = models.CharField(max_length=255, blank=False)
 
-    atributos = models.ManyToManyField(atributo.Atributo, related_name="fichas")
+    atributos = models.ManyToManyField(atributo.Atributo, related_name="fichas", through="FicAtr")
     pericias = models.ManyToManyField(
         pericia.Pericia, related_name="fichas", through="FicPer"
     )
@@ -52,3 +52,15 @@ class FicPer(models.Model):
 
     def __str__(self):
         return f"{self.ficha} - {self.pericia}"
+
+
+class FicAtr(models.Model):
+    ficha = models.ForeignKey(Ficha, on_delete=models.PROTECT, related_name="FicAtr")
+    atributo = models.ForeignKey(atributo.Atributo, on_delete=models.PROTECT, related_name="FicAtr")
+    valor = models.SmallIntegerField()
+
+    class Meta:
+        unique_together = [["ficha", "atributo"]]
+
+    def __str__(self):
+        return f"{self.ficha} - {self.atributo}"

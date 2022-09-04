@@ -12,3 +12,9 @@ class FicPerSerializer(ModelSerializer):
     class Meta:
         model = ficha.FicPer
         fields = "__all__"
+
+
+class FicAtrSerializer(ModelSerializer):
+    class Meta:
+        model = ficha.FicAtr
+        fields = "__all__"
