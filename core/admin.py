@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from core.models import usuario, origem, pericia, item, atributo, ficha,  proficiencia
+from core.models import usuario, origem, pericia, item, atributo, ficha, proficiencia
 
 admin.site.register(usuario.Usuario)
 admin.site.register(origem.Origem)

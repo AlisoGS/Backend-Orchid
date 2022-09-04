@@ -1,5 +1,6 @@
 from django.db import models
-from core.models import usuario, origem, pericia,atributo
+from core.models import usuario, origem, pericia, atributo
+
 
 class Ficha(models.Model):
     id_ficha = models.AutoField(primary_key=True)
@@ -12,7 +13,9 @@ class Ficha(models.Model):
     nome_ficha = models.CharField(max_length=255, blank=False)
 
     atributos = models.ManyToManyField(atributo.Atributo, related_name="fichas")
-    pericias = models.ManyToManyField(pericia.Pericia, related_name="fichas", through='FicPer')
+    pericias = models.ManyToManyField(
+        pericia.Pericia, related_name="fichas", through="FicPer"
+    )
 
     nex = models.PositiveIntegerField(default=0)
     vida_max = models.IntegerField(default=0)
@@ -20,9 +23,9 @@ class Ficha(models.Model):
     sani_max = models.IntegerField(default=0)
     sani_atu = models.IntegerField(default=0)
 
-
     def __str__(self):
         return f"{self.nome_ficha}"
+
 
 class FicPer(models.Model):
     d = 1
@@ -36,14 +39,16 @@ class FicPer(models.Model):
         (e, "Expert"),
     ]
 
-    ficha = models.ForeignKey(
-        Ficha, on_delete=models.PROTECT, related_name="FicPer")
+    ficha = models.ForeignKey(Ficha, on_delete=models.PROTECT, related_name="FicPer")
     pericia = models.ForeignKey(
-        pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic")
-    grau_pericia = models.IntegerField(choices=GRAUS, null=False, blank=False, default=1)
+        pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic"
+    )
+    grau_pericia = models.IntegerField(
+        choices=GRAUS, null=False, blank=False, default=1
+    )
 
     class Meta:
-        unique_together = [['ficha', 'pericia']]
+        unique_together = [["ficha", "pericia"]]
 
     def __str__(self):
         return f"{self.ficha} - {self.pericia}"
