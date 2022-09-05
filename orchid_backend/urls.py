@@ -5,6 +5,7 @@ from rest_framework.routers import DefaultRouter
 
 from core.views import atributo, ficha, item, origem, pericia, usuario, proficiencia
 
+
 router = DefaultRouter()
 router.register(r"armas", item.ArmaViewSet)
 router.register(r"atributos", atributo.AtributoViewSet)

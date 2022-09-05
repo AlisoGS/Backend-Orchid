@@ -1,17 +1,19 @@
 from rest_framework.viewsets import ModelViewSet
-from core.models import ficha
-from core.serializers.ficha import FichaSerializer, FicPerSerializer, FicAtrSerializer
-
+from core.models.ficha import Ficha, FicAtr, FicPer
+from core.serializers.ficha import FichaSerializer, FicPerSerializer, FicAtrSerializer, FichaDetailSerializer
 
 class FichaViewSet(ModelViewSet):
-    queryset = ficha.Ficha.objects.all()
-    serializer_class = FichaSerializer
+    queryset = Ficha.objects.all()
 
+    def get_serializer_class(self):
+        if self.action in ['list', 'retrieve']:
+            return FichaDetailSerializer
+        return FichaSerializer
 
 class FicPerViewSet(ModelViewSet):
-    queryset = ficha.FicPer.objects.all()
+    queryset = FicPer.objects.all()
     serializer_class = FicPerSerializer
 
 class FicAtrViewSet(ModelViewSet):
-    queryset = ficha.FicAtr.objects.all()
+    queryset = FicAtr.objects.all()
     serializer_class = FicAtrSerializer
