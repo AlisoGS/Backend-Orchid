@@ -6,3 +6,9 @@ class OrigemSerializer(ModelSerializer):
     class Meta:
         model = origem.Origem
         fields = "__all__"
+
+class OrigemDetailSerializer(ModelSerializer):
+    class Meta:
+        model = origem.Origem
+        fields = "__all__"
+        depth = 1
