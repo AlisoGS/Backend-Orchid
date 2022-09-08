@@ -30,15 +30,11 @@ class Ficha(models.Model):
 
 
 class FicPer(models.Model):
-    d = 1
-    t = 2
-    v = 3
-    e = 4
     GRAUS = [
-        (d, "Destreinado"),
-        (t, "Treinado"),
-        (v, "Veterano"),
-        (e, "Expert"),
+        (1, "Destreinado"),
+        (2, "Treinado"),
+        (3, "Veterano"),
+        (4, "Expert"),
     ]
 
     ficha = models.ForeignKey(Ficha, on_delete=models.PROTECT, related_name="FicPer")

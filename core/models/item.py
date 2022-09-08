@@ -7,7 +7,7 @@ class Item(models.Model):
 
     id_item = models.AutoField(primary_key=True)
     nome_item = models.CharField(max_length=255)
-    desc_item = models.CharField(max_length=255)
+    desc_item = models.CharField(max_length=400, null=True, blank= True)
     espaco_item = models.IntegerField(default=1)
 
 
