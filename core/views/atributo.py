@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from core.models import atributo
 from core.serializers.atributo import AtributoSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 class AtributoViewSet(ModelViewSet):

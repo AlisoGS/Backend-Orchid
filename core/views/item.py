@@ -5,6 +5,7 @@ from core.serializers.item import (
     UtilitarioSerializer,
     VestimentaSerializer,
 )
+from rest_framework.permissions import IsAuthenticated
 
 
 class ArmaViewSet(ModelViewSet):
