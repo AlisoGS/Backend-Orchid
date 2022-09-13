@@ -5,10 +5,9 @@ class Item(models.Model):
     class Meta:
         abstract = True
 
-    id_item = models.AutoField(primary_key=True)
-    nome_item = models.CharField(max_length=255)
-    desc_item = models.CharField(max_length=400, null=True, blank= True)
-    espaco_item = models.IntegerField(default=1)
+    nome = models.CharField(max_length=255)
+    desc = models.CharField(max_length=400, null=True, blank= True)
+    espaco = models.IntegerField(default=1)
 
 
 class Arma(Item):
@@ -16,12 +15,12 @@ class Arma(Item):
     tipo_dado = models.IntegerField(default=None)
 
     def __str__(self):
-        return self.nome_item
+        return self.nome
 
 
 class Utilitario(Item):
     def __str__(self):
-        return self.nome_item
+        return self.nome
 
 
 class Vestimenta(Item):
@@ -30,4 +29,4 @@ class Vestimenta(Item):
     modificador_blo = models.IntegerField(default=None)
 
     def __str__(self):
-        return self.nome_item
+        return self.nome

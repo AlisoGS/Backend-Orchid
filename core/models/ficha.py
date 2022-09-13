@@ -3,14 +3,13 @@ from core.models import usuario, origem, pericia, atributo
 
 
 class Ficha(models.Model):
-    id_ficha = models.AutoField(primary_key=True)
-    user_ficha = models.ForeignKey(
+    user = models.ForeignKey(
         usuario.Usuario, on_delete=models.PROTECT, related_name="fichas"
     )
-    orig_ficha = models.ForeignKey(
+    orig = models.ForeignKey(
         origem.Origem, on_delete=models.PROTECT, related_name="fichas"
     )
-    nome_ficha = models.CharField(max_length=255, blank=False)
+    nome = models.CharField(max_length=255, blank=False)
 
     atributos = models.ManyToManyField(
         atributo.Atributo, related_name="fichas", through="FicAtr"
@@ -26,7 +25,7 @@ class Ficha(models.Model):
     sani_atu = models.IntegerField(default=0)
 
     def __str__(self):
-        return f"{self.nome_ficha}"
+        return f"{self.nome}"
 
 
 class FicPer(models.Model):
@@ -41,7 +40,7 @@ class FicPer(models.Model):
     pericia = models.ForeignKey(
         pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic"
     )
-    grau_pericia = models.IntegerField(
+    grau = models.IntegerField(
         choices=GRAUS, null=False, blank=False, default=1
     )
 
