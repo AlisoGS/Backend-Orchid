@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from core.models import item
-from core.serializers.item import (
+from core.models import Arma, Utilitario, Vestimenta
+from core.serializers import (
     ArmaSerializer,
     UtilitarioSerializer,
     VestimentaSerializer,
@@ -9,15 +9,18 @@ from rest_framework.permissions import IsAuthenticated
 
 
 class ArmaViewSet(ModelViewSet):
-    queryset = item.Arma.objects.all()
+    queryset = Arma.objects.all()
     serializer_class = ArmaSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class UtilitarioViewSet(ModelViewSet):
-    queryset = item.Utilitario.objects.all()
+    queryset = Utilitario.objects.all()
     serializer_class = UtilitarioSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class VestimentaViewSet(ModelViewSet):
-    queryset = item.Vestimenta.objects.all()
+    queryset = Vestimenta.objects.all()
     serializer_class = VestimentaSerializer
+    permission_classes = [IsAuthenticated]

@@ -1,20 +1,20 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import item
+from core import models
 
 
 class ArmaSerializer(ModelSerializer):
     class Meta:
-        model = item.Arma
+        model = models.Arma
         fields = "__all__"
 
 
 class UtilitarioSerializer(ModelSerializer):
     class Meta:
-        model = item.Utilitario
+        model = models.Utilitario
         fields = "__all__"
 
 
 class VestimentaSerializer(ModelSerializer):
     class Meta:
-        model = item.Vestimenta
+        model = models.Vestimenta
         fields = "__all__"

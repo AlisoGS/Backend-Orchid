@@ -2,7 +2,7 @@ from rest_framework.serializers import ModelSerializer
 from core import models
 
 
-class AtributoSerializer(ModelSerializer):
+class PoderSerializer(ModelSerializer):
     class Meta:
-        model = models.Atributo
+        model = models.Poder
         fields = "__all__"

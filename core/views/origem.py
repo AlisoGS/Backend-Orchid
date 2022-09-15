@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from core.models.origem import Origem
-from core.serializers.origem import OrigemSerializer, OrigemDetailSerializer
+from core.models import Origem
+from core.serializers import OrigemSerializer, OrigemDetailSerializer
 from rest_framework.permissions import IsAuthenticated
 
 

@@ -1,25 +1,25 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import ficha
+from core import models
 
 
 class FichaSerializer(ModelSerializer):
     class Meta:
-        model = ficha.Ficha
+        model = models.Ficha
         fields = "__all__"
 
 class FichaDetailSerializer(ModelSerializer):
     class Meta:
-        model = ficha.Ficha
+        model = models.Ficha
         fields = "__all__"
         depth = 2
 
 class FicPerSerializer(ModelSerializer):
     class Meta:
-        model = ficha.FicPer
+        model = models.FicPer
         fields = "__all__"
 
 
 class FicAtrSerializer(ModelSerializer):
     class Meta:
-        model = ficha.FicAtr
+        model = models.FicAtr
         fields = "__all__"

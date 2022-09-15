@@ -1,8 +1,8 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import pericia
+from core import models
 
 
 class PericiaSerializer(ModelSerializer):
     class Meta:
-        model = pericia.Pericia
+        model = models.Pericia
         fields = "__all__"

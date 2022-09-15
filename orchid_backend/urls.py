@@ -3,21 +3,23 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from core.views import atributo, ficha, item, origem, pericia, usuario, proficiencia
+from core import views
 
 
 router = DefaultRouter()
-router.register(r"armas", item.ArmaViewSet)
-router.register(r"atributos", atributo.AtributoViewSet)
-router.register(r"fichas", ficha.FichaViewSet)
-router.register(r"ficha-atributos", ficha.FicAtrViewSet)
-router.register(r"ficha-pericias", ficha.FicPerViewSet)
-router.register(r"origens", origem.OrigemViewSet)
-router.register(r"pericias", pericia.PericiaViewSet)
-router.register(r"proficiencias", proficiencia.ProficienciaViewSet)
-router.register(r"usuarios", usuario.UsuarioViewSet)
-router.register(r"utilitarios", item.UtilitarioViewSet)
-router.register(r"vestimentas", item.VestimentaViewSet)
+router.register(r"armas", views.ArmaViewSet)
+router.register(r"atributos", views.AtributoViewSet)
+router.register(r"fichas", views.FichaViewSet)
+router.register(r"ficha-atributos", views.FicAtrViewSet)
+router.register(r"ficha-pericias", views.FicPerViewSet)
+router.register(r"origens", views.OrigemViewSet)
+router.register(r"pericias", views.PericiaViewSet)
+router.register(r"poderes", views.PoderViewSet)
+router.register(r"proficiencias", views.ProficienciaViewSet)
+router.register(r"trilha", views.TrilhaViewSet)
+router.register(r"usuarios", views.UsuarioViewSet)
+router.register(r"utilitarios", views.UtilitarioViewSet)
+router.register(r"vestimentas", views.VestimentaViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
