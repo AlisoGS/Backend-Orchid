@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
+
 from core.models import Origem
-from core.serializers import OrigemSerializer, OrigemDetailSerializer
+from core.serializers import OrigemDetailSerializer, OrigemSerializer
 
 
 class OrigemViewSet(ModelViewSet):

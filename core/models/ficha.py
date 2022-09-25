@@ -1,13 +1,14 @@
 from django.db import models
-from core.models import usuario, origem, pericia, atributo
+
+from core.models import atributo, origem, pericia, usuario
 
 
 class Ficha(models.Model):
     user = models.ForeignKey(
-        usuario.Usuario, on_delete=models.PROTECT, related_name="fichas"
+        usuario.Usuario, on_delete=models.CASCADE, related_name="fichas"
     )
     orig = models.ForeignKey(
-        origem.Origem, on_delete=models.PROTECT, related_name="fichas"
+        origem.Origem, on_delete=models.CASCADE, related_name="fichas"
     )
     nome = models.CharField(max_length=255, blank=False)
 
@@ -36,9 +37,9 @@ class FicPer(models.Model):
         (4, "Expert"),
     ]
 
-    ficha = models.ForeignKey(Ficha, on_delete=models.PROTECT, related_name="FicPer")
+    ficha = models.ForeignKey(Ficha, on_delete=models.CASCADE, related_name="FicPer")
     pericia = models.ForeignKey(
-        pericia.Pericia, on_delete=models.PROTECT, related_name="PerFic"
+        pericia.Pericia, on_delete=models.CASCADE, related_name="PerFic"
     )
     grau = models.IntegerField(
         choices=GRAUS, null=False, blank=False, default=1
@@ -53,9 +54,9 @@ class FicPer(models.Model):
 
 
 class FicAtr(models.Model):
-    ficha = models.ForeignKey(Ficha, on_delete=models.PROTECT, related_name="FicAtr")
+    ficha = models.ForeignKey(Ficha, on_delete=models.CASCADE, related_name="FicAtr")
     atributo = models.ForeignKey(
-        atributo.Atributo, on_delete=models.PROTECT, related_name="FicAtr"
+        atributo.Atributo, on_delete=models.CASCADE, related_name="FicAtr"
     )
     valor = models.SmallIntegerField()
 

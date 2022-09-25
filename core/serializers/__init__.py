@@ -1,7 +1,8 @@
 from .atributo import AtributoSerializer
-from .ficha import FichaSerializer, FichaDetailSerializer, FicAtrSerializer, FicPerSerializer
+from .ficha import (FicAtrSerializer, FichaDetailSerializer, FichaSerializer,
+                    FicPerSerializer)
 from .item import ArmaSerializer, UtilitarioSerializer, VestimentaSerializer
-from .origem import OrigemSerializer, OrigemDetailSerializer
+from .origem import OrigemDetailSerializer, OrigemSerializer
 from .pericia import PericiaSerializer
 from .poder import PoderSerializer
 from .proficiencia import ProficienciaSerializer

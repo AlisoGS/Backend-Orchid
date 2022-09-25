@@ -1,5 +1,5 @@
 from .atributo import Atributo
-from .ficha import Ficha, FicAtr, FicPer
+from .ficha import FicAtr, Ficha, FicPer
 from .item import Arma, Utilitario, Vestimenta
 from .origem import Origem
 from .pericia import Pericia

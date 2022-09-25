@@ -1,13 +1,11 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class Usuario(models.Model):
-    login = models.CharField(default=None, max_length=255, unique=True)
-    nome = models.CharField(default=None, max_length=255)
-    sobrenome = models.CharField(default=None, max_length=255)
-    email = models.EmailField(default=None, max_length=255, unique=True)
-    password = models.CharField(default=None, max_length=255)
-    active = models.BooleanField(default=True)
+class Usuario(AbstractUser):
+    cpf = models.CharField(max_length=11, unique=True)
+    telefone = models.CharField(max_length=11, blank=True, null=True)
+    data_nascimento = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return self.login
+        return self.username

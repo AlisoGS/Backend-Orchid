@@ -1,5 +1,5 @@
 from .atributo import AtributoViewSet
-from .ficha import FichaViewSet, FicAtrViewSet, FicPerViewSet
+from .ficha import FicAtrViewSet, FichaViewSet, FicPerViewSet
 from .item import ArmaViewSet, UtilitarioViewSet, VestimentaViewSet
 from .origem import OrigemViewSet
 from .pericia import PericiaViewSet

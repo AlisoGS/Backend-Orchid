@@ -1,12 +1,9 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
-from core.models import Ficha, FicAtr, FicPer
-from core.serializers import (
-    FichaSerializer,
-    FicPerSerializer,
-    FicAtrSerializer,
-    FichaDetailSerializer,
-)
+
+from core.models import FicAtr, Ficha, FicPer
+from core.serializers import (FicAtrSerializer, FichaDetailSerializer,
+                              FichaSerializer, FicPerSerializer)
 
 
 class FichaViewSet(ModelViewSet):
