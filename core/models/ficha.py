@@ -1,16 +1,25 @@
 from django.db import models
-
+from media.models import Image
 from core.models import atributo, origem, pericia, usuario
 
 
 class Ficha(models.Model):
+    nome = models.CharField(max_length=255, blank=False)
+    foto = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None
+    )
     user = models.ForeignKey(
         usuario.Usuario, on_delete=models.CASCADE, related_name="fichas"
     )
     orig = models.ForeignKey(
         origem.Origem, on_delete=models.CASCADE, related_name="fichas"
     )
-    nome = models.CharField(max_length=255, blank=False)
+    
 
     atributos = models.ManyToManyField(
         atributo.Atributo, related_name="fichas", through="FicAtr"

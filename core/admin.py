@@ -21,7 +21,7 @@ admin.site.register(models.Proficiencia)
 class UsuarioAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (("Personal info"), {"fields": ("first_name", "last_name", "email", "cpf", "telefone", "data_nascimento")}),
+        (("Personal info"), {"fields": ("first_name", "last_name", "data_nascimento", "foto")}),
         (
             ("Permissions"),
             {
