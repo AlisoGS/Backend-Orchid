@@ -1,7 +1,7 @@
-from media.models import Image
-
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+
+from media.models import Image
 
 
 class Usuario(AbstractUser):

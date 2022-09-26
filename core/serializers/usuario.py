@@ -1,10 +1,9 @@
-from rest_framework.serializers import ModelSerializer
-from core import models
-
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
 
+from core import models
 from media.models import Image
 from media.serializers import ImageSerializer
+
 
 class UsuarioSerializer(ModelSerializer): 
     foto_attachment_key = SlugRelatedField(

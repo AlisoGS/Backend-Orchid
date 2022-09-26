@@ -1,6 +1,7 @@
 from django.db import models
-from media.models import Image
+
 from core.models import atributo, origem, pericia, usuario
+from media.models import Image
 
 
 class Ficha(models.Model):
