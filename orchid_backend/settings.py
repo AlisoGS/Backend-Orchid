@@ -127,7 +127,7 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Livraria API",
-    "DESCRIPTION": "API para gerenciamento de livraria,, incluindo endpoints e documentação.",
+    "TITLE": "Orchid API",
+    "DESCRIPTION": "API para gerenciamento de Orchid,, incluindo endpoints e documentação.",
     "VERSION": "1.0.0",
 }
