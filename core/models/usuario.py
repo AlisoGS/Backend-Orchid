@@ -5,7 +5,7 @@ from media.models import Image
 
 
 class Usuario(AbstractUser):
-    data_nascimento = models.DateField(blank=True, null=True)
+    data_nascimento = models.DateField(blank=True, null=True, default=None)
 
     foto = models.ForeignKey(
         Image,
