@@ -1,4 +1,4 @@
-from .ficha import (FichaDetailSerializer, FichaSerializer, FicPerSerializer)
+from .ficha import FichaDetailSerializer, FichaSerializer, FicPerSerializer
 from .item import ArmaSerializer, UtilitarioSerializer, VestimentaSerializer
 from .origem import OrigemDetailSerializer, OrigemSerializer
 from .pericia import PericiaSerializer

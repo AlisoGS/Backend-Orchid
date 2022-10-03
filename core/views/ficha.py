@@ -2,8 +2,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import Ficha, FicPer
-from core.serializers import ( FichaDetailSerializer,
-                              FichaSerializer, FicPerSerializer)
+from core.serializers import FichaDetailSerializer, FichaSerializer, FicPerSerializer
 
 
 class FichaViewSet(ModelViewSet):

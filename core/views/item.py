@@ -2,8 +2,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import Arma, Utilitario, Vestimenta
-from core.serializers import (ArmaSerializer, UtilitarioSerializer,
-                              VestimentaSerializer)
+from core.serializers import ArmaSerializer, UtilitarioSerializer, VestimentaSerializer
 
 
 class ArmaViewSet(ModelViewSet):

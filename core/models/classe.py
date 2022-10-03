@@ -1,5 +1,7 @@
 from django.db import models
+
 from models.proficiencia import Proficiencia
+
 
 class Classe(models.Model):
     nome = models.TextField(max_length=40)
