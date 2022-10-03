@@ -33,8 +33,3 @@ class FicPerSerializer(ModelSerializer):
         model = models.FicPer
         fields = "__all__"
 
-
-class FicAtrSerializer(ModelSerializer):
-    class Meta:
-        model = models.FicAtr
-        fields = "__all__"

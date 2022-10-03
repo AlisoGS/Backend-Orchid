@@ -1,6 +1,6 @@
 from django.db import models
 
-from core.models import atributo, origem, pericia, usuario
+from core.models import origem, pericia, usuario
 from media.models import Image
 
 
@@ -21,10 +21,6 @@ class Ficha(models.Model):
         origem.Origem, on_delete=models.CASCADE, related_name="fichas"
     )
     
-
-    atributos = models.ManyToManyField(
-        atributo.Atributo, related_name="fichas", through="FicAtr"
-    )
     pericias = models.ManyToManyField(
         pericia.Pericia, related_name="fichas", through="FicPer"
     )
@@ -34,6 +30,11 @@ class Ficha(models.Model):
     vida_atu = models.IntegerField(default=0)
     sani_max = models.IntegerField(default=0)
     sani_atu = models.IntegerField(default=0)
+    agili = models.SmallIntegerField(default=0)
+    forca = models.SmallIntegerField(default=0)
+    intel = models.SmallIntegerField(default=0)
+    prese = models.SmallIntegerField(default=0)
+    vigor = models.SmallIntegerField(default=0)
 
     def __str__(self):
         return f"{self.nome}"
@@ -62,17 +63,3 @@ class FicPer(models.Model):
     def __str__(self):
         return f"{self.ficha} - {self.pericia}"
 
-
-class FicAtr(models.Model):
-    ficha = models.ForeignKey(Ficha, on_delete=models.CASCADE, related_name="FicAtr")
-    atributo = models.ForeignKey(
-        atributo.Atributo, on_delete=models.CASCADE, related_name="FicAtr"
-    )
-    valor = models.SmallIntegerField()
-
-    class Meta:
-        unique_together = [["ficha", "atributo"]]
-        verbose_name_plural = "FichaAtributos"
-
-    def __str__(self):
-        return f"{self.ficha} - {self.atributo}"

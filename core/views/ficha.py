@@ -1,8 +1,8 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
-from core.models import FicAtr, Ficha, FicPer
-from core.serializers import (FicAtrSerializer, FichaDetailSerializer,
+from core.models import Ficha, FicPer
+from core.serializers import ( FichaDetailSerializer,
                               FichaSerializer, FicPerSerializer)
 
 
@@ -22,10 +22,3 @@ class FicPerViewSet(ModelViewSet):
 
     queryset = FicPer.objects.all()
     serializer_class = FicPerSerializer
-
-
-class FicAtrViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated]
-
-    queryset = FicAtr.objects.all()
-    serializer_class = FicAtrSerializer
