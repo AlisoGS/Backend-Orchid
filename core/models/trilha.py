@@ -1,5 +1,7 @@
 from django.db import models
+
 from .classe import Classe
+
 
 class Trilha(models.Model):
     nome = models.CharField(max_length=40, blank=False, null=False)

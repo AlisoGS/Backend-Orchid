@@ -1,6 +1,6 @@
+from .classe import Classe
 from .ficha import Ficha, FicPer
 from .item import Arma, Utilitario, Vestimenta
-from .classe import Classe
 from .origem import Origem
 from .pericia import Pericia
 from .poder import Poder
