@@ -1,6 +1,6 @@
 from django.db import models
 
-from core.models import origem, pericia, usuario
+from core.models import origem, pericia, usuario, fichario
 from media.models import Image
 
 
@@ -14,16 +14,21 @@ class Ficha(models.Model):
         blank=True,
         default=None
     )
-    user = models.ForeignKey(
+    usuario = models.ForeignKey(
         usuario.Usuario, on_delete=models.CASCADE, related_name="fichas"
     )
-    orig = models.ForeignKey(
+    origem = models.ForeignKey(
         origem.Origem, on_delete=models.CASCADE, related_name="fichas"
+    )
+
+    fichario = models.ForeignKey(
+        fichario.Fichario, on_delete=models.DO_NOTHING, related_name="fichas", blank=True, null=True, default=None
     )
     
     pericias = models.ManyToManyField(
         pericia.Pericia, related_name="fichas", through="FicPer"
     )
+
 
     nex = models.PositiveIntegerField(default=0)
     vida_max = models.IntegerField(default=0)

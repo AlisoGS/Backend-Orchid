@@ -1,5 +1,6 @@
 from .classe import Classe
 from .ficha import Ficha, FicPer
+from .fichario import Fichario
 from .item import Arma, Utilitario, Vestimenta
 from .origem import Origem
 from .pericia import Pericia
