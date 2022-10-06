@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.utils.translation import gettext_lazy as _
 
 from core import models
 
-admin.site.register(models.Usuario)
+# admin.site.register(models.Usuario)
 admin.site.register(models.Origem)
 admin.site.register(models.Pericia)
 admin.site.register(models.Arma)
@@ -19,9 +20,9 @@ admin.site.register(models.Proficiencia)
 class UsuarioAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (("Personal info"), {"fields": ("first_name", "last_name", "data_nascimento", "foto")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name", "data_nascimento", "foto")}),
         (
-            ("Permissions"),
+            _("Permissions"),
             {
                 "fields": (
                     "is_active",
@@ -32,5 +33,6 @@ class UsuarioAdmin(UserAdmin):
                 ),
             },
         ),
-        (("Important dates"), {"fields": ("last_login", "date_joined")}),
+        (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
+admin.site.register(models.Usuario, UsuarioAdmin)
