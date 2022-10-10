@@ -1,10 +1,17 @@
 from .classe import ClasseDetailSerializer, ClasseSerializer
 from .ficha import FichaDetailSerializer, FichaSerializer, FicPerSerializer
-from .item import ArmaSerializer, UtilitarioSerializer, VestimentaSerializer
+from .fichario import FicharioDetailSerializer, FicharioSerializer
+from .item import (
+    ArmaDetailSerializer,
+    ArmaSerializer,
+    UtilitarioDetailSerializer,
+    UtilitarioSerializer,
+    VestimentaDetailSerializer,
+    VestimentaSerializer,
+)
 from .origem import OrigemDetailSerializer, OrigemSerializer
 from .pericia import PericiaSerializer
 from .poder import PoderSerializer
 from .proficiencia import ProficienciaSerializer
-from .trilha import TrilhaSerializer, TrilhaDetailSerializer
-from .usuario import UsuarioSerializer, UsuarioDetailSerializer
-from .fichario import FicharioSerializer, FicharioDetailSerializer
+from .trilha import TrilhaDetailSerializer, TrilhaSerializer
+from .usuario import UsuarioDetailSerializer, UsuarioSerializer

@@ -1,6 +1,6 @@
 from django.db import models
 
-from core.models import fichario, origem, pericia, usuario, classe, trilha, poder
+from core.models import classe, fichario, origem, pericia, poder, trilha, usuario
 from media.models import Image
 
 

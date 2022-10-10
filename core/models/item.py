@@ -1,5 +1,7 @@
 from django.db import models
+
 from core.models import ficha
+
 
 class Item(models.Model):
     class Meta:

@@ -1,9 +1,14 @@
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import Trilha
-from core.serializers import TrilhaSerializer
+from core.serializers import TrilhaDetailSerializer, TrilhaSerializer
 
 
 class TrilhaViewSet(ModelViewSet):
     queryset = Trilha.objects.all()
-    serializer_class = TrilhaSerializer
+
+
+    def get_serializer_class(self):
+        if self.action in ["list", "retrieve"]:
+            return TrilhaDetailSerializer
+        return TrilhaSerializer
