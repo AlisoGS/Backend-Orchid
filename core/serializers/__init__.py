@@ -7,3 +7,4 @@ from .poder import PoderSerializer
 from .proficiencia import ProficienciaSerializer
 from .trilha import TrilhaSerializer, TrilhaDetailSerializer
 from .usuario import UsuarioSerializer, UsuarioDetailSerializer
+from .fichario import FicharioSerializer, FicharioDetailSerializer
