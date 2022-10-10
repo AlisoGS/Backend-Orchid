@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 from core.models import classe, fichario, origem, pericia, poder, trilha, usuario
@@ -42,7 +43,7 @@ class Ficha(models.Model):
 
     classe = models.ForeignKey(classe.Classe, on_delete=models.CASCADE, related_name="fichas", blank=True, null=True, default=None)
     trilha = models.ForeignKey(trilha.Trilha, on_delete=models.CASCADE, related_name="fichas", blank=True, null=True, default=None)
-    poderes = models.ManyToManyField(poder.Poder, related_name="fichas")
+    poderes = models.ManyToManyField(poder.Poder, related_name="fichas", blank = True)
 
     def __str__(self):
         return f"{self.nome}"

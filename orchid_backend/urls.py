@@ -16,7 +16,9 @@ from media.router import router as media_router
 
 router = DefaultRouter()
 router.register(r"armas", views.ArmaViewSet)
+router.register(r"classes", views.ClasseViewSet)
 router.register(r"fichas", views.FichaViewSet)
+router.register(r"fichario", views.FicharioViewSet)
 router.register(r"ficha-pericias", views.FicPerViewSet)
 router.register(r"origens", views.OrigemViewSet)
 router.register(r"pericias", views.PericiaViewSet)
