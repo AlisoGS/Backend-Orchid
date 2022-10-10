@@ -3,13 +3,13 @@ from rest_framework.serializers import ModelSerializer
 from core import models
 
 
-class TrilhaSerializer(ModelSerializer):
+class ClasseSerializer(ModelSerializer):
     class Meta:
-        model = models.Trilha
+        model = models.Classe
         fields = "__all__"
 
-class TrilhaDetailSerializer(ModelSerializer):
+class ClasseDetailSerializer(ModelSerializer):
     class Meta:
-        model = models.Trilha
+        model = models.Classe
         fields = "__all__"
         depth = 2

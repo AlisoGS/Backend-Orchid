@@ -1,5 +1,5 @@
 from django.db import models
-
+from core.models import ficha
 
 class Item(models.Model):
     class Meta:
@@ -8,6 +8,7 @@ class Item(models.Model):
     nome = models.CharField(max_length=255)
     desc = models.CharField(max_length=400, null=True, blank= True)
     espaco = models.IntegerField(default=1)
+    ficha = models.ForeignKey(ficha.Ficha, on_delete=models.CASCADE, default=None)
 
 
 class Arma(Item):

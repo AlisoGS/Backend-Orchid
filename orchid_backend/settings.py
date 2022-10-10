@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "corsheaders",
     "rest_framework",
+    "rest_framework.authtoken",
     "media",
     "core",
     "rest_framework_simplejwt",

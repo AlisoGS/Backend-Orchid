@@ -1,6 +1,6 @@
 from django.db import models
 
-from core.models import fichario, origem, pericia, usuario
+from core.models import fichario, origem, pericia, usuario, classe, trilha, poder
 from media.models import Image
 
 
@@ -29,7 +29,6 @@ class Ficha(models.Model):
         pericia.Pericia, related_name="fichas", through="FicPer"
     )
 
-
     nex = models.PositiveIntegerField(default=0)
     vida_max = models.IntegerField(default=0)
     vida_atu = models.IntegerField(default=0)
@@ -40,6 +39,10 @@ class Ficha(models.Model):
     intel = models.SmallIntegerField(default=0)
     prese = models.SmallIntegerField(default=0)
     vigor = models.SmallIntegerField(default=0)
+
+    classe = models.ForeignKey(classe.Classe, on_delete=models.CASCADE, related_name="fichas", blank=True, null=True, default=None)
+    trilha = models.ForeignKey(trilha.Trilha, on_delete=models.CASCADE, related_name="fichas", blank=True, null=True, default=None)
+    poderes = models.ManyToManyField(poder.Poder, related_name="fichas")
 
     def __str__(self):
         return f"{self.nome}"
