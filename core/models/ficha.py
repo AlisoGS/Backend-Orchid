@@ -66,7 +66,7 @@ class FicPer(models.Model):
 
     class Meta:
         unique_together = [["ficha", "pericia"]]
-        verbose_name_plural = "FichaPericias"
+        verbose_name_plural = "fichapericias"
 
     def __str__(self):
         return f"{self.ficha} - {self.pericia}"

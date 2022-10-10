@@ -13,4 +13,4 @@ class Origem(models.Model):
         return self.nome
 
     class Meta:
-        verbose_name_plural = "Origens"
+        verbose_name_plural = "origens"

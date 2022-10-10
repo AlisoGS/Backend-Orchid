@@ -9,4 +9,4 @@ class Poder(models.Model):
         return f"{self.nome}"
 
     class Meta:
-        verbose_name_plural = "Poderes"
+        verbose_name_plural = "poderes"
