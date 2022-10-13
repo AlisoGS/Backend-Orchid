@@ -12,3 +12,4 @@ class TrilhaViewSet(ModelViewSet):
         if self.action in ["list", "retrieve"]:
             return TrilhaDetailSerializer
         return TrilhaSerializer
+

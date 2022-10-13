@@ -129,6 +129,6 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     "TITLE": "Orchid API",
-    "DESCRIPTION": "API para gerenciamento de Orchid,, incluindo endpoints e documentação.",
+    "DESCRIPTION": "API para gerenciamento de Orchid, incluindo endpoints e a documentação.",
     "VERSION": "1.0.0",
 }
