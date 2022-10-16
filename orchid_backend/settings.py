@@ -11,7 +11,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 AUTH_USER_MODEL = "core.Usuario"
 
-MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_URL = "https://orchidproject.herokuapp.com/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_files/")
 FILE_UPLOAD_PERMISSIONS = 0o640
