@@ -275,6 +275,14 @@ docs = ["furo (>=2021.7.5b38)", "proselint (>=0.10.2)", "sphinx-autodoc-typehint
 test = ["appdirs (==1.4.4)", "pytest-cov (>=2.7)", "pytest-mock (>=3.6)", "pytest (>=6)"]
 
 [[package]]
+name = "psycopg2-binary"
+version = "2.9.4"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "pyjwt"
 version = "2.5.0"
 description = "JSON Web Token implementation in Python"
@@ -386,7 +394,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "eb165e8458218c12bccfff5624fffef6292e6dc93d5241862ed45241f0f70c49"
+content-hash = "e35adccab3935aa12fb6b4fa2981a9c852583f1968c34716a890d86f8bc0d651"
 
 [metadata.files]
 asgiref = [
@@ -430,6 +438,7 @@ pathspec = []
 pillow = []
 pkgutil-resolve-name = []
 platformdirs = []
+psycopg2-binary = []
 pyjwt = []
 pyrsistent = []
 python-magic = []
