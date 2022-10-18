@@ -2,19 +2,11 @@ from email.policy import default
 from django.db import models
 
 from core.models import classe, fichario, origem, pericia, poder, trilha, usuario
-from media.models import Image
 
 
 class Ficha(models.Model):
     nome = models.CharField(max_length=255, blank=False)
-    foto = models.ForeignKey(
-        Image,
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        default=None
-    )
+
     usuario = models.ForeignKey(
         usuario.Usuario, on_delete=models.CASCADE, related_name="fichas"
     )
