@@ -1,4 +1,5 @@
 from email.policy import default
+
 from django.db import models
 
 from core.models import classe, fichario, origem, pericia, poder, trilha, usuario

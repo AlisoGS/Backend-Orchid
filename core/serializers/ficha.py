@@ -2,6 +2,7 @@ from rest_framework.serializers import ModelSerializer, SlugRelatedField
 
 from core import models
 
+
 class FichaSerializer(ModelSerializer):
     class Meta:
         model = models.Ficha

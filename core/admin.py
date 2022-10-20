@@ -2,20 +2,35 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from core import models
+from core.models import (
+    Arma,
+    Classe,
+    Ficha,
+    Fichario,
+    FicPer,
+    Origem,
+    Pericia,
+    Poder,
+    Proficiencia,
+    Trilha,
+    Usuario,
+    Utilitario,
+    Vestimenta,
+)
 
-admin.site.register(models.Arma)
-admin.site.register(models.Classe)
-admin.site.register(models.Ficha)
-admin.site.register(models.FicPer)
-admin.site.register(models.Fichario)
-admin.site.register(models.Origem)
-admin.site.register(models.Pericia)
-admin.site.register(models.Poder)
-admin.site.register(models.Proficiencia)
-admin.site.register(models.Trilha)
-admin.site.register(models.Utilitario)
-admin.site.register(models.Vestimenta)
+admin.site.register(Arma)
+admin.site.register(Classe)
+admin.site.register(Ficha)
+admin.site.register(FicPer)
+admin.site.register(Fichario)
+admin.site.register(Origem)
+admin.site.register(Pericia)
+admin.site.register(Poder)
+admin.site.register(Proficiencia)
+admin.site.register(Trilha)
+admin.site.register(Utilitario)
+admin.site.register(Vestimenta)
+
 
 
 class UsuarioAdmin(UserAdmin):
@@ -36,4 +51,4 @@ class UsuarioAdmin(UserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
-admin.site.register(models.Usuario, UsuarioAdmin)
+admin.site.register(Usuario, UsuarioAdmin)
