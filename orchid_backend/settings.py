@@ -1,20 +1,21 @@
 import os
 from pathlib import Path
 
+import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+environ.Env.read_env((os.path.join(BASE_DIR, '.env')))
 
-SECRET_KEY = "django-insecure-wiz%y9k%1@69t)(_ka*3a093iv1g#e84wmt3flxxo4b9vw8q1("
 
-DEBUG = True
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+
 
 ALLOWED_HOSTS = ["*"]
 AUTH_USER_MODEL = "core.Usuario"
 
-MEDIA_URL = "https://orchidproject.herokuapp.com/media/"
-MEDIA_ENDPOINT = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media_files/")
-FILE_UPLOAD_PERMISSIONS = 0o640
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -72,15 +73,15 @@ DATABASES = {
         # default
         "ENGINE": "django.db.backends.postgresql",
         # database
-        "NAME": "railway",
+        "NAME": env("PGDATABASE"),
         # pguser
-        "USER": "postgres",
+        "USER": env("PGUSER"),
         # pgpass
-        "PASSWORD": "NFzSOkf70mCYQXpstabk",
+        "PASSWORD": env("PGPASSWORD"),
         # pghost
-        "HOST": "containers-us-west-109.railway.app",
+        "HOST": env("PGHOST"),
         # pgport
-        "PORT": "7051",
+        "PORT": env("PGPORT"),
     }
 }
 
