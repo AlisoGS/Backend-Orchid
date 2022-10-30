@@ -16,7 +16,7 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
 AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
+CSRF_TRUSTED_ORIGINS = ["https://orchidproject.up.railway.app/"]
 ALLOWED_HOSTS = ["*"]
 AUTH_USER_MODEL = "core.Usuario"
 

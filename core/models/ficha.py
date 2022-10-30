@@ -7,7 +7,7 @@ from core.models import classe, fichario, origem, pericia, poder, trilha, usuari
 
 class Ficha(models.Model):
     nome = models.CharField(max_length=255, blank=False)
-
+    foto = models.ImageField(upload_to="media/perfil", blank=True, null=True)
     usuario = models.ForeignKey(
         usuario.Usuario, on_delete=models.CASCADE, related_name="fichas"
     )
