@@ -5,10 +5,11 @@ from core.serializers import UsuarioDetailSerializer, UsuarioSerializer
 
 
 class UsuarioViewSet(ModelViewSet):
-    queryset = Usuario.objects.all()
-
-
     def get_serializer_class(self):
         if self.action in ["list", "retrieve"]:
             return UsuarioDetailSerializer
         return UsuarioSerializer
+
+    def get_queryset(self):
+        usuario = self.request.user
+        return Usuario.objects.filter(id=usuario.id)

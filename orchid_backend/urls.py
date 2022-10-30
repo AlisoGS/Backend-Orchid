@@ -24,7 +24,7 @@ router.register(r"pericias", views.PericiaViewSet)
 router.register(r"poderes", views.PoderViewSet)
 router.register(r"proficiencias", views.ProficienciaViewSet)
 router.register(r"trilha", views.TrilhaViewSet)
-router.register(r"usuarios", views.UsuarioViewSet)
+router.register(r"usuarios", views.UsuarioViewSet, basename="usuarios")
 router.register(r"utilitarios", views.UtilitarioViewSet)
 router.register(r"vestimentas", views.VestimentaViewSet)
 
@@ -46,5 +46,4 @@ urlpatterns = [
         name="redoc",
     ),
     path("api/", include(router.urls)),
-
 ]
