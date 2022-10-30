@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 import environ
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
@@ -16,7 +17,9 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
 AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-CSRF_TRUSTED_ORIGINS = ["https://orchidproject.up.railway.app/"]
+
+CSRF_TRUSTED_ORIGINS = ["https://*.up.railway.app/", "http://*.127.0.0.1"]
+
 ALLOWED_HOSTS = ["*"]
 AUTH_USER_MODEL = "core.Usuario"
 
@@ -122,8 +125,8 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 
