@@ -38,7 +38,7 @@ class Ficha(models.Model):
     intel = models.SmallIntegerField(default=0)
     prese = models.SmallIntegerField(default=0)
     vigor = models.SmallIntegerField(default=0)
-    imagem = models.FileField(uploaded_to="ficha/", blank=True, null=True)
+    imagem = models.FileField(upload_to="ficha/", blank=True, null=True)
     classe = models.ForeignKey(
         classe.Classe,
         on_delete=models.CASCADE,
