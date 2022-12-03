@@ -16,7 +16,7 @@ from core import views
 router = DefaultRouter()
 router.register(r"armas", views.ArmaViewSet)
 router.register(r"classes", views.ClasseViewSet)
-router.register(r"fichas", views.FichaViewSet)
+router.register(r"fichas", views.FichaViewSet, basename="fichas")
 router.register(r"fichario", views.FicharioViewSet)
 router.register(r"ficha-pericias", views.FicPerViewSet)
 router.register(r"origens", views.OrigemViewSet)
