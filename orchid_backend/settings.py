@@ -6,13 +6,13 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-environ.Env.read_env((os.path.join(BASE_DIR, '.env')))
-AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
-SECRET_KEY = env('SECRET_KEY')
-DEBUG = env('DEBUG')
-ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+environ.Env.read_env((os.path.join(BASE_DIR, ".env")))
+AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env("DEBUG")
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
 
 AWS_QUERYSTRING_AUTH = False
@@ -76,7 +76,7 @@ WSGI_APPLICATION = "orchid_backend.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-     "default": {
+    "default": {
         # default
         "ENGINE": "django.db.backends.postgresql",
         # database
@@ -121,7 +121,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 STATIC_URL = "static/"
 
 
@@ -134,14 +133,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     "rest_framework.permissions.DjangoModelPermissions",
-    # ],
-    # "DEFAULT_AUTHENTICATION_CLASSES": (
-    #     "rest_framework_simplejwt.authentication.JWTAuthentication",
-    # ),
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-
 }
 
 SPECTACULAR_SETTINGS = {
