@@ -5,13 +5,15 @@ from core.serializers import FichaDetailSerializer, FichaSerializer, FicPerSeria
 
 
 class FichaViewSet(ModelViewSet):
-    queryset = Ficha.objects.all()
-
-
     def get_serializer_class(self):
         if self.action in ["list", "retrieve"]:
             return FichaDetailSerializer
         return FichaSerializer
+
+    def get_queryset(self):
+        usuario = self.request.user
+
+        return Ficha.objects.filter(usuario=usuario)
 
 
 class FicPerViewSet(ModelViewSet):
