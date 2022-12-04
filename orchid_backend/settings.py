@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-
+from datetime import timedelta
 import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -144,4 +144,9 @@ SPECTACULAR_SETTINGS = {
     "TITLE": "Orchid API",
     "DESCRIPTION": "API para gerenciamento de Orchid, incluindo endpoints e a documentação.",
     "VERSION": "1.0.0",
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=180),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1)
 }
