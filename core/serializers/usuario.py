@@ -22,5 +22,13 @@ class UsuarioSerializer(ModelSerializer):
 class UsuarioDetailSerializer(ModelSerializer):
     class Meta:
         model = models.Usuario
-        fields = "__all__"
+        fields = (
+            "id",
+            "email",
+            "username",
+            "first_name",
+            "last_name",
+            "data_nascimento",
+            "foto",
+        )
         depth = 1
