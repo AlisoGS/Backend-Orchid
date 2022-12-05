@@ -21,8 +21,14 @@ class FicPerSerializer(ModelSerializer):
         fields = "__all__"
 
 
+class FicPerPostSerializer(ModelSerializer):
+    class Meta:
+        model = models.FicPer
+        fields = ("pericia",)
+
+
 class FichaSerializer(ModelSerializer):
-    pericias = FicPerSerializer(many=True)
+    pericias = FicPerPostSerializer(many=True)
     usuario = HiddenField(default=CurrentUserDefault())
 
     class Meta:
