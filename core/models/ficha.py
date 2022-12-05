@@ -57,13 +57,6 @@ class Ficha(models.Model):
 
 
 class FicPer(models.Model):
-    GRAUS = [
-        (1, "Destreinado"),
-        (2, "Treinado"),
-        (3, "Veterano"),
-        (4, "Expert"),
-    ]
-
     ficha = models.ForeignKey(Ficha, on_delete=models.CASCADE, related_name="pericias")
     pericia = models.ForeignKey(
         pericia.Pericia, on_delete=models.CASCADE, related_name="PerFic"
