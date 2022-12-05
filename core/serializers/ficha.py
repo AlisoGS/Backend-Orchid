@@ -5,6 +5,8 @@ from rest_framework.serializers import (
     CurrentUserDefault,
 )
 
+from drf_extra_fields.fields import Base64ImageField
+
 from core import models
 
 
@@ -30,6 +32,7 @@ class FicPerPostSerializer(ModelSerializer):
 class FichaSerializer(ModelSerializer):
     pericias = FicPerPostSerializer(many=True)
     usuario = HiddenField(default=CurrentUserDefault())
+    imagem = Base64ImageField()
 
     class Meta:
         model = models.Ficha
