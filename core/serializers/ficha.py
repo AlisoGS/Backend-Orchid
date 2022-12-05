@@ -30,13 +30,12 @@ class FichaSerializer(ModelSerializer):
         fields = "__all__"
 
     def create(self, validated_data):
-        usuario = self.request.user
         pericias = validated_data.pop("pericias", None)
-        ficha = models.Ficha.objects.create(**validated_data, usuario=usuario)
+        ficha = models.Ficha.objects.create(**validated_data)
 
         if pericias is not None:
             for pericia in pericias:
-                models.FicPer.objects.create(**pericia, ficha=ficha)
+                models.FicPer.objects.create(pericia=pericia, ficha=ficha)
 
         ficha.save()
         return ficha
