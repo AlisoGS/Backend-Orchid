@@ -35,7 +35,7 @@ class FichaSerializer(ModelSerializer):
 
         if pericias is not None:
             for pericia in pericias:
-                models.FicPer.objects.create(pericia=pericia, ficha=ficha)
+                models.FicPer.objects.create(**pericia, ficha=ficha)
 
         ficha.save()
         return ficha
