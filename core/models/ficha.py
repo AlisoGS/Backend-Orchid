@@ -23,10 +23,6 @@ class Ficha(models.Model):
         default=None,
     )
 
-    pericias = models.ManyToManyField(
-        pericia.Pericia, related_name="fichas", through="FicPer"
-    )
-
     nex = models.PositiveIntegerField(default=0)
     vida_max = models.IntegerField(default=0)
     vida_atu = models.IntegerField(default=0)
@@ -68,11 +64,10 @@ class FicPer(models.Model):
         (4, "Expert"),
     ]
 
-    ficha = models.ForeignKey(Ficha, on_delete=models.CASCADE, related_name="FicPer")
+    ficha = models.ForeignKey(Ficha, on_delete=models.CASCADE, related_name="pericias")
     pericia = models.ForeignKey(
         pericia.Pericia, on_delete=models.CASCADE, related_name="PerFic"
     )
-    grau = models.IntegerField(choices=GRAUS, null=False, blank=False, default=1)
 
     class Meta:
         unique_together = [["ficha", "pericia"]]
