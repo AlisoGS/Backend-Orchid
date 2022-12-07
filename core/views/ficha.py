@@ -17,6 +17,10 @@ class FichaViewSet(ModelViewSet):
 
 
 class FicPerViewSet(ModelViewSet):
-
-    queryset = FicPer.objects.all()
+    def get_queryset(self):
+        queryset = FicPer.objects.all()
+        ficha = self.request.query_params.get('ficha')
+        if ficha is not None:
+            queryset = queryset.filter(ficha=ficha)
+        return queryset
     serializer_class = FicPerSerializer
