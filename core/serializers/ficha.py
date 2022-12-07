@@ -9,6 +9,11 @@ from drf_extra_fields.fields import Base64ImageField
 
 from core import models
 
+class PericiaSerializer(ModelSerializer):
+    class Meta:
+        model = models.Pericia
+        fields = ("nome",)
+
 
 class FichaDetailSerializer(ModelSerializer):
     class Meta:
@@ -18,6 +23,7 @@ class FichaDetailSerializer(ModelSerializer):
 
 
 class FicPerSerializer(ModelSerializer):
+    pericia = PericiaSerializer()
     class Meta:
         model = models.FicPer
         fields = "__all__"
